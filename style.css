@@ -1,0 +1,80 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content:space-around;
+    
+}
+.w48per {
+    width: 48%!important;
+}
+
+.mb_8px {
+    margin-bottom: 8px!important;
+}
+
+
+.w100per {
+    width: 100%;
+}
+
+button {
+    padding: 4px 16px;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: "Poppins", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+}
+
+.header {
+  text-align: center;
+  padding: 16px 20px;
+  background: -webkit-linear-gradient(darkorchid, darkblue);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.input{
+  width: 48%;
+  padding: 16px 12px;
+  border-width: 1.5px;
+  border-style: solid;
+  border-image: linear-gradient(to right, darkorchid,  rgb(142, 50, 204),
+                            rgb(117, 50, 204),rgb(91, 50, 204), darkblue) 1;
+}
+
+
+
+.output {
+    width: 48%;
+    padding: 16px 12px;
+    border-width: 1.5px;
+    border-style: solid;
+    border-image: linear-gradient(to right, darkblue, rgb(54, 26, 153),
+                             rgb(42, 0, 139), rgb(53, 0, 139), darkorchid) 1;
+    transition: color 5s;
+}
+
+
+
+textarea {
+  width: 100%;
+  height:40vh;
+  resize: none;
+}
+
+textarea:focus {
+    border: 1.2px solid rgb(144, 0, 255);
+}
+
+
+

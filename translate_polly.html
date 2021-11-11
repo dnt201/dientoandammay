@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Amazon Translate</title>
+    <meta charset="UTF-8">
+    <script src="https://sdk.amazonaws.com/js/aws-sdk-2.410.0.min.js"></script>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <h1 class="header">Amazon Service</h1>
+    <div class="container">
+    <!-- <h2>Chọn giọng đọc</h2>
+    <select id="voiceIDSelect">
+        <option value="Joanna">Joanna - English</option>
+        <option value="Marlene">Marlene</option>
+        <option value="Penelope">Penelope</option>
+        <option value="Celine">Celine</option>
+        <option value="Vitoria">Vitoria</option>
+        <br />
+    </select> -->
+
+        <div class="input">
+            <table class="tg w100per">
+                <tr>
+                    <th align="left">
+                        Source Language Code:
+                        <select id="sourceLanguageCodeDropdown" class="mb_8px">
+                            <option value="en">English</option>
+                            <option value="hr">Croatia</option>
+                            <option value="zh">Chinese</option>
+                            <option value="zh-TW">Chinese - Traditional</option>
+                            <option value="de">German</option>
+                            <option value="nl">Dutch</option>
+                            <option value="fr">French</option>
+                            <option value="sk">Slovak</option>
+                            <option value="ja">Japanese</option>
+                            <option value="ko">Korean</option>
+                            <option value="th">Thái</option>
+                            <option value="vi">Việt Nam</option>
+                        </select>
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+                        <textarea id="inputText" name="inputText" class="mb_8px"
+                            placeholder="Text to translate..."></textarea>
+                    </th>
+                </tr>
+            </table>
+            <div class="toolbar">
+                <div class="mb_8px">
+                    <button type="button" name="translateButton" onclick="doTranslate()">Translate</button>
+                    <button type="button" name="synthesizeButton" onclick="doSynthesizeInput()">Synthesize Input
+                        Speech</button>
+                    <button type="button" name="clearButton" onclick="clearInputs()">Clear</button>
+                </div>
+                <div>
+                    <p id="result_input" class="mb_8px">Enter text above then click Synthesize</p>
+                    <audio id="audioPlayback_input" controls>
+                        <source id="audioSource_input" type="audio/mp3" src="">
+                    </audio>
+                </div>
+            </div>
+        </div>
+
+        <div class="output">
+            <table class="tg w100per">
+                <tr>
+                    <th align="left">
+                        Target Language Code:
+                        <select id="targetLanguageCodeDropdown" class="mb_8px">
+                            <option value="en">English</option>
+                            <option value="hr">Croatia</option>
+                            <option value="zh">Chinese</option>
+                            <option value="zh-TW">Chinese - Traditional</option>
+                            <option value="de">German</option>
+                            <option value="nl">Dutch</option>
+                            <option value="fr">French</option>
+                            <option value="sk">Slovak</option>
+                            <option value="ja">Japanese</option>
+                            <option value="ko">Korean</option>
+                            <option value="th">Thái</option>
+                            <option value="vi">Việt Nam</option>
+                        </select>
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+                        <textarea id="outputText" name="outputText" class="mb_8px" placeholder="Translated text..."
+                            disabled></textarea>
+                    </th>
+                </tr>
+            </table>
+            <div class="toolbar">
+                <div>
+                    <button type="button" name="synthesizeButton" class="mb_8px"
+                        onclick="doSynthesizeOutput()">Synthesize
+                        Output Speech</button>
+                </div>
+
+                <div>
+                    <p id="result_output" class="mb_8px">Enter text above then click Synthesize</p>
+                    <audio id="audioPlayback_output" controls>
+                        <source id="audioSource_output" type="audio/mp3" src="">
+                    </audio>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="./main.js"></script>
+</body>
+
+</html>
