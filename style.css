@@ -76,5 +76,26 @@ textarea:focus {
     border: 1.2px solid rgb(144, 0, 255);
 }
 
+input[type="file"] {
+  display: none;
+}
 
+.textract-file-upload {
+  border: 1px solid #ccc;
+  display: inline-block;
+  padding: 6px 12px;
+  cursor: pointer;
+}
 
+/* img crop */
+img {
+  display: block;
+  max-width: 100%;
+}
+.preview {
+  overflow: hidden;
+  width: 160px; 
+  height: 160px;
+  margin: 10px;
+  border: 1px solid red;
+}
