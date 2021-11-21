@@ -16,7 +16,7 @@ async function showDataToTextbox(response) {
 
 var textractClient = new AWS.Textract();
 async function analyze_document_text(params) {
-  let analyzeDoc = textractClient.analyzeDocument(params, function (err, data) {
+  let analyzeDoc = textractClient.analyzeDocument(params, (err, data) => {
     if (err)          // an error occurred
       console.log(err, err.stack);
     else {           // successful response
@@ -54,14 +54,17 @@ function encode(input) {
 
 var bs_modal = $('#modal');
 var image = document.getElementById('image');
+var reselect = document.getElementById('reselect')
 var cropper, reader, file;
 
 var fileUpload = document.getElementById('fileUpload')
 
 fileUpload.addEventListener("change", (event) => {
   var files = event.target.files;
-  var done = function (url) {
+  console.log('change');
+  var done = (url) => {
     image.src = url;
+    reselect.hidden = false;
     bs_modal.modal('show');
   };
 
@@ -72,9 +75,7 @@ fileUpload.addEventListener("change", (event) => {
       done(URL.createObjectURL(file));
     } else if (FileReader) {
       reader = new FileReader();
-      reader.onload = function (e) {
-        done(reader.result);
-      };
+      reader.onload = (e) => done(reader.result);
       reader.readAsDataURL(file);
     }
   }
@@ -116,7 +117,12 @@ $("#crop").click(function () {
       // image.src = 'data:image/png;base64,' + encode(bytes);
 
       //Analyze document
-      analyze_document_text(params)
+      //analyze_document_text(params)
+      bs_modal.modal('hide');
     })
   });
 });
+
+$('#reselect').click(() => {
+  bs_modal.modal('show');
+})

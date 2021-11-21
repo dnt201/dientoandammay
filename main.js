@@ -149,5 +149,7 @@ function clearInputs() {
     document.getElementById('outputText').value = "";
     document.getElementById("sourceLanguageCodeDropdown").value = "en";
     document.getElementById("targetLanguageCodeDropdown").value = "en";
-    document.getElementById("file-upload").value = "";
+    $('#image').removeAttr('src')
+    $("#file-upload").val('')
+    document.getElementById("reselect").hidden = true;
 }
