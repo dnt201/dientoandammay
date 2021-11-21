@@ -117,7 +117,7 @@ $("#crop").click(function () {
       // image.src = 'data:image/png;base64,' + encode(bytes);
 
       //Analyze document
-      //analyze_document_text(params)
+      analyze_document_text(params)
       bs_modal.modal('hide');
     })
   });
